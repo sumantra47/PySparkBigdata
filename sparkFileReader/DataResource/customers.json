@@ -1,4 +1,11 @@
 [
+  {"id": 0,
+    "email": "a@b.com",
+    "first": "John",
+    "last": "Doe",
+    "company": "ABC",
+    "created_at": "2024-06-01T12:00:00",
+    "country": "US"},
   {
     "id": 1,
     "email": "isidro_von@hotmail.com",
