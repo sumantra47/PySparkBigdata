@@ -1,0 +1,207 @@
+[
+    {
+        "table": "Artists",
+        "fields": [
+            {
+                "field": "ConstituentID",
+                "datatype": "string",
+                "description": "A unique identifier for the artist in the museum's database system."
+            },
+            {
+                "field": "DisplayName",
+                "datatype": "string",
+                "description": "The public display name of the artist, which may be their full name, pseudonym, or stage name."
+            },
+            {
+                "field": "ArtistBio",
+                "datatype": "string",
+                "description": "A short biography or background information about the artist."
+            },
+            {
+                "field": "Nationality",
+                "datatype": "string",
+                "description": "The country or region the artist is originally from."
+            },
+            {
+                "field": "Gender",
+                "datatype": "string",
+                "description": "The gender of the artist."
+            },
+            {
+                "field": "BeginDate",
+                "datatype": "integer",
+                "description": "The birth year of the artist."
+            },
+            {
+                "field": "EndDate",
+                "datatype": "integer",
+                "description": "The death year of the artist."
+            },
+            {
+                "field": "Wiki QID",
+                "datatype": "string",
+                "description": "A unique identifier linking to the artist\u2019s page on Wikidata, a collaborative database of structured data."
+            },
+            {
+                "field": "ULAN",
+                "datatype": "string",
+                "description": "The Union List of Artist Names (ULAN) identifier, used to track artists in the Getty Research Institute\u2019s standardized system."
+            }
+        ]
+    },
+    {
+        "table": "Artworks",
+        "fields": [
+            {
+                "field": "Title",
+                "datatype": "string",
+                "description": "The name or title of the artwork."
+            },
+            {
+                "field": "Artist",
+                "datatype": "string",
+                "description": "The name of the artist(s) who created the artwork."
+            },
+            {
+                "field": "ConstituentID",
+                "datatype": "string",
+                "description": "Unique identifier(s) for the artist(s) related to the artwork (separated by commas)."
+            },
+            {
+                "field": "ArtistBio",
+                "datatype": "string",
+                "description": "A short biography or background information about the artist."
+            },
+            {
+                "field": "Nationality",
+                "datatype": "string",
+                "description": "The country or region of origin of the artist."
+            },
+            {
+                "field": "BeginDate",
+                "datatype": "integer",
+                "description": "The year the artist was born."
+            },
+            {
+                "field": "EndDate",
+                "datatype": "integer",
+                "description": "The year the artist passed away."
+            },
+            {
+                "field": "Gender",
+                "datatype": "string",
+                "description": "The gender of the artist."
+            },
+            {
+                "field": "Date",
+                "datatype": "integer",
+                "description": "The date or year the artwork was created."
+            },
+            {
+                "field": "Medium",
+                "datatype": "string",
+                "description": "The material(s) used to create the artwork, such as oil paint, marble, video, or other mediums."
+            },
+            {
+                "field": "Dimensions",
+                "datatype": "string",
+                "description": "The size or physical dimensions of the artwork (e.g., height x width x depth in cm)."
+            },
+            {
+                "field": "CreditLine",
+                "datatype": "string",
+                "description": "Information regarding the credit or donation source of the artwork, such as the donor or collection from which it was acquired."
+            },
+            {
+                "field": "AccessionNumber",
+                "datatype": "string",
+                "description": "The unique number assigned to the artwork in the museum\u2019s collection system, used for tracking and reference purposes."
+            },
+            {
+                "field": "Classification",
+                "datatype": "string",
+                "description": "The classification of the artwork, such as painting, sculpture, drawing, photography, etc."
+            },
+            {
+                "field": "Department",
+                "datatype": "string",
+                "description": "The department of the museum where the artwork is stored or categorized, such as the Department of Painting or Sculpture."
+            },
+            {
+                "field": "DateAcquired",
+                "datatype": "string",
+                "description": "The date the artwork was acquired by the museum."
+            },
+            {
+                "field": "Cataloged",
+                "datatype": "string",
+                "description": "Whether the artwork is cataloged in the museum\u2019s collection system (Y or N)."
+            },
+            {
+                "field": "ObjectID",
+                "datatype": "string",
+                "description": "A unique identifier for the artwork in the MoMA database system."
+            },
+            {
+                "field": "URL",
+                "datatype": "string",
+                "description": "A web link to more detailed information about the artwork on the MoMA website."
+            },
+            {
+                "field": "ImageURL",
+                "datatype": "string",
+                "description": "The URL of the image of the artwork, hosted by the museum."
+            },
+            {
+                "field": "OnView",
+                "datatype": "string",
+                "description": "Location of the artwork if it is currently on display at the museum (otherwise blank)."
+            },
+            {
+                "field": "Circumference (cm)",
+                "datatype": "float",
+                "description": "The measurement of the artwork's circumference, applicable for spherical or rounded works, in centimeters."
+            },
+            {
+                "field": "Depth (cm)",
+                "datatype": "string",
+                "description": "The depth of the artwork, measured in centimeters, typically relevant for sculptures or three-dimensional works."
+            },
+            {
+                "field": "Diameter (cm)",
+                "datatype": "float",
+                "description": "The diameter of the artwork, typically relevant for circular objects, measured in centimeters."
+            },
+            {
+                "field": "Height (cm)",
+                "datatype": "float",
+                "description": "The height of the artwork, typically relevant for vertical works, measured in centimeters."
+            },
+            {
+                "field": "Length (cm)",
+                "datatype": "float",
+                "description": "The length of the artwork, typically relevant for horizontal works, measured in centimeters."
+            },
+            {
+                "field": "Weight (kg)",
+                "datatype": "float",
+                "description": "The weight of the artwork, measured in kilograms."
+            },
+            {
+                "field": "Width (cm)",
+                "datatype": "string",
+                "description": "The width of the artwork, typically relevant for horizontal or flat works, measured in centimeters."
+            },
+            {
+                "field": "Seat Height (cm)",
+                "datatype": "float",
+                "description": "The height of the seat or the seating part of the artwork, if applicable, measured in centimeters."
+            },
+            {
+                "field": "Duration (sec.)",
+                "datatype": "float",
+                "description": "The duration in seconds of any video or time-based artwork, representing the total length of the artwork's time span."
+            }
+        ]
+    }
+]
