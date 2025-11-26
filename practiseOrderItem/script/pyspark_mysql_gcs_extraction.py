@@ -2,12 +2,25 @@ from pyspark.sql import SparkSession
 import mysql.connector
 import pandas as pd
 from pyspark.sql.functions import to_date
+import os
 
 spark = SparkSession.builder.appName("pyspark-mysql-gcs-extraction").getOrCreate()
-def connectMysql():
+
+def load_env(path):
+    with open(path) as f:
+        for line in f:
+            key, value = line.strip().split("=", 1)
+            os.environ[key] = value
+
+load_env("/etc/secrets.env")
+
+username = os.getenv("DB_USERNAME")
+password = os.getenv("DB_PASSWORD")
+
+def connectMysql(username,password):
     connection = mysql.connector.connect(
-        user='root',
-        password='Root@123',
+        user=username,
+        password=password,
         database='practisedevdb',
         host='10.1.128.3',
         port='3306'
@@ -32,7 +45,7 @@ def dt_transformation(df):
 def writeOutputSink(df,partition_column,table_name,mode):
     df.write.partitionBy(partition_column).mode(mode).parquet("gs://practise-dev-data/"+table_name+"/")
 
-connection = connectMysql()
+connection = connectMysql(username, password)
 pd_orders = extractData(qry_order,connection)
 pd_order_items = extractData(qry_order_item,connection)
 closeMysqlConnection(connection)

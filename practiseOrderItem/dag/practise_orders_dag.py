@@ -13,6 +13,7 @@ DEFAULT_CLUSTER = os.environ.get("DP_CLUSTER_NAME", "practise-orders-cluster")
 # enforce minimum of 2 workers
 DEFAULT_WORKERS = max(2, int(os.environ.get("DP_NUM_WORKERS", "2")))
 INIT_SCRIPT_GCS = "gs://practise-dev-data/install_mysql_connector.sh"
+SECRET_SCRIPT_GCS = "gs://practise-dev-data/get-script.sh"
 
 cluster_config = {
     "master_config": {
@@ -33,6 +34,10 @@ cluster_config = {
     "initialization_actions": [
         {
             "executable_file": INIT_SCRIPT_GCS,
+            "execution_timeout": {"seconds": 600},
+        },
+        {
+            "executable_file": SECRET_SCRIPT_GCS,
             "execution_timeout": {"seconds": 600},
         }
     ],
