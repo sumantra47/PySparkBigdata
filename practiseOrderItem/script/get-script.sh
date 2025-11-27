@@ -1,11 +1,9 @@
 #!/bin/bash
-set -e
 
-DB_USERNAME=$(gcloud secrets versions access latest --secret=db-username)
-DB_PASSWORD=$(gcloud secrets versions access latest --secret=db-password)
+DB_USER=$(gcloud secrets versions access latest --secret=db-username)
+DB_PASS=$(gcloud secrets versions access latest --secret=db-password)
 
-# Store in a secure, non-world-readable env file
-echo "export DB_USERNAME='$DB_USERNAME'" >> /etc/profile.d/db-env.sh
-echo "export DB_PASSWORD='$DB_PASSWORD'" >> /etc/profile.d/db-env.sh
+echo "DB_USERNAME=$DB_USER" | sudo tee /etc/secrets.env
+echo "DB_PASSWORD=$DB_PASS" | sudo tee -a /etc/secrets.env
 
-chmod 600 /etc/profile.d/db-env.sh
+sudo chmod 755 /etc/secrets.env
